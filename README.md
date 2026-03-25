@@ -34,7 +34,7 @@ PHP + MySQL web app for managing travel packages and bookings with three roles: 
 
 ## Setup (local)
 
-1. **Put the project in your web root**
+1. **Put the project in web root**
    - Example (XAMPP): `C:\xampp\htdocs\7trip-travel-management\`
 
 2. **Create the database**
@@ -51,8 +51,6 @@ PHP + MySQL web app for managing travel packages and bookings with three roles: 
    **phpMyAdmin**
    - Create database (or let the script create it), then Import the file:
      - `database/trip_and_travel_management.sql`
-
-   **CLI (MySQL)**
 
 ```bash
 mysql -u root -p < database/trip_and_travel_management.sql
@@ -74,12 +72,6 @@ mysql -u root -p < database/trip_and_travel_management.sql
   - Organizer: `organizer/organizer_dashboard.php`
   - Customer: `customer/customer_dashboard.php`
 
-## Notes / known behaviors
-
-- **Passwords are currently compared in plain text** in `login.php` and stored as plain text in `register.php`. If you want, I can update the project to use `password_hash()` / `password_verify()` and a migration approach.
-- `register.php` currently **echoes debugging values** (username/email/role, etc.) on submit. Remove those echoes for production.
-- If file uploads fail, ensure the `uploads/` folder exists and your PHP process has permission to write to it.
-
 ## Seed login accounts (from the SQL file)
 
 - **Admin**: username `admin`, password `admin123`
@@ -92,7 +84,4 @@ mysql -u root -p < database/trip_and_travel_management.sql
 - **Blank/500 error**: check Apache/PHP error logs and ensure PHP extensions (`mysqli`) are enabled.
 - **Images not showing**: confirm files exist under `uploads/` and paths are correct.
 
-## License
-
-Add a license file if you plan to distribute this project.
 
